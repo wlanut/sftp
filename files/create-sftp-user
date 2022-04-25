@@ -90,8 +90,6 @@ if [ -d "$userKeysQueuedDir" ]; then
         cat "$publickey" >> "$userKeysAllowedFileTmp"
     done
 
-    # Remove duplicate keys
-    sort < "$userKeysAllowedFileTmp" | uniq > "$userKeysAllowedFile"
 
     chown "$uid" "$userKeysAllowedFile"
     chmod 600 "$userKeysAllowedFile"
